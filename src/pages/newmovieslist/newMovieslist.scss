@@ -1,0 +1,62 @@
+.newMoviesList {
+  width: 96%;
+  background-color: #222;
+  padding: 0 2%;
+
+  .bestMoviesHeader {
+    color: #ffffff;
+    padding: 60px auto;
+    text-align: center;
+  }
+  .search {
+    display: flex;
+
+    justify-content: center;
+    width: 100%;
+    margin: 40px auto;
+    input {
+      width: 50%;
+      border-radius: 10px;
+      padding: 7px;
+      outline: none;
+    }
+  }
+  .newMoviesListWrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  .pagination {
+    .pageNumbers {
+      list-style: none;
+      display: flex;
+      color: white;
+      li {
+        padding: 10px;
+        border: 1px solid white;
+        cursor: pointer;
+        &.active {
+          color: #222;
+          background-color: #fff;
+        }
+        button {
+          background-color: transparent;
+          border: none;
+          color: #fff;
+          font-size: 1.2rem;
+          cursor: pointer;
+          transition: all 0.5s ease;
+          &:hover {
+            background-color: #fff;
+            color: black;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}

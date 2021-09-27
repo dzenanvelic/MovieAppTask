@@ -1,0 +1,36 @@
+nav {
+  height: 70px;
+  background-color: #222;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo-nav {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      color: red;
+      font-size: 40px;
+    }
+    ul {
+      display: flex;
+
+      li {
+        list-style: none;
+        margin-left: 20px;
+        font-size: 22px;
+        font-weight: bold;
+
+        .linkNav {
+          width: 100%;
+          text-decoration: none;
+          font-size: 18px;
+          color: white;
+        }
+      }
+    }
+  }
+}

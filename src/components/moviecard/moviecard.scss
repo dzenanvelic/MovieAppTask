@@ -1,0 +1,16 @@
+.movieCard {
+  width: 200px;
+  height: 350px;
+
+  border: 1px solid white;
+  margin-bottom: 20px;
+
+  img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+  }
+  .description {
+    color: white;
+  }
+}
