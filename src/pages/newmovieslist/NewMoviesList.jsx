@@ -80,8 +80,12 @@ try {
             
         }
 getPopularMovies()
-    },[currentPage])
+    },[currentPage, search])
 //console.log(bestMovies)
+
+
+
+//set movies from search
 useEffect(()=>{
     const getSearchedMovies=async()=>{
     try {
@@ -95,8 +99,6 @@ if(searchedMovies){
         console.log("FILTER MOVIES ERROR",error)
         
     }
-
-
 }
 getSearchedMovies()
     },[search,currentPage])
