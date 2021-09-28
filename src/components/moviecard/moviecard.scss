@@ -1,6 +1,11 @@
+.linkSingleCard {
+  text-decoration: none;
+}
+
 .movieCard {
   width: 200px;
-  height: 350px;
+  height: 370px;
+  transition: all 0.5s ease-in;
 
   border: 1px solid white;
   margin-bottom: 20px;
@@ -12,5 +17,34 @@
   }
   .description {
     color: white;
+  }
+  .ratingStar {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    .iconStar {
+      font-size: 20px;
+      color: goldenrod;
+      padding-right: 5px;
+      padding-left: 2px;
+    }
+  }
+  h3 {
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  &:hover {
+    transform: scale(1.03);
+    border: 1px solid goldenrod;
+  }
+}
+@media (max-width: 776px) {
+  .movieCard {
+    width: 300px;
+
+    h3 {
+      font-size: 20px;
+    }
   }
 }

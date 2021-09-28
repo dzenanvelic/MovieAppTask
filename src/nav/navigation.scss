@@ -11,12 +11,17 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .logoNavLink {
+      text-decoration: none;
+    }
     h2 {
       color: red;
       font-size: 40px;
+      padding-left: 20px;
     }
     ul {
       display: flex;
+      padding-right: 20px;
 
       li {
         list-style: none;

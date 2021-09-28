@@ -5,17 +5,22 @@ import './navigation.scss'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 function Navigation() {
-    const[filterMovies,setFilterMovies]=useState('')
+
+   
     
-//console.log("FILTER MOVIES",filterMovies)
-const dispatch = useDispatch()
-dispatch({type:'SEARCH_QUERY',payload:filterMovies})
+
+
    
 
     return (
         <nav>
-            <div className="logo-nav">
-<h2>IMDB</h2>
+           
+             <div className="logo-nav">
+ 
+      <Link className="logoNavLink" to="/">      
+<h2>TMDB</h2>
+ </Link>
+
 <ul>
     <li><Link className="linkNav" to='/'>Home</Link></li>
     <li><Link className="linkNav" to='/movies'>Movies</Link></li>

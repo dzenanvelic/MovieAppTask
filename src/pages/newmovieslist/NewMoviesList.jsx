@@ -8,15 +8,20 @@ import { Link } from 'react-router-dom'
 function NewMoviesList() {
     //set loading
     const [loading,SetLoading]=useState(false)
+
     /* set best movies */
     const [bestMovies,setBestMovies]= useState([])
     const[search,setSearch]= useState('')
+
     //set items per page
     const[itemsPerPage,setItemsPerPage]= useState(20)
+
 //current page in pagination
 const[currentPage,setCurrentPage]= useState(1)
+
 //total number of pages
 const [totalNumberMovies,setTotalNumberMovies]=useState(null)
+
 //for showing limited number pages
 const [pageNumberLimit,setPageNumberLimit]=useState(5)
 const [maxPageNumberLimit,setMaxPageNumberLimit]=useState(5)
@@ -63,7 +68,7 @@ const renderedPageNumbers = pages.map((number)=>{
 try {
     SetLoading(true)
    const bestMovies =  await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=a7e6b68f84ecc27a2ef86b36e96d5d56&language=en-US&page=${currentPage}`)
-   console.log("BEST MOVIES",bestMovies.data)
+  // console.log("BEST MOVIES",bestMovies.data)
   setBestMovies(bestMovies.data.results)
   setTotalNumberMovies(bestMovies.data.total_results)
   SetLoading(false)
@@ -96,6 +101,7 @@ if(searchedMovies){
 getSearchedMovies()
     },[search,currentPage])
 
+    //next page
     const handleNext=()=>{
         setCurrentPage(currentPage + 1)
         if(currentPage + 1 > maxPageNumberLimit){
@@ -103,6 +109,7 @@ getSearchedMovies()
             setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
     }
 }
+//previous page
     const handlePrev=()=>{
 setCurrentPage(currentPage - 1)
  if((currentPage - 1)%pageNumberLimit == 0){
@@ -110,11 +117,12 @@ setCurrentPage(currentPage - 1)
             setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
     }
     }
-
+//increment page button
     let pageIncrementButton=null;
     if(pages.length > maxPageNumberLimit){
         pageIncrementButton = <li onClick={handleNext}>&hellip;</li>
     }
+    //decrement page button
     let pageDecrementButton=null;
     if(pages.length > maxPageNumberLimit){
         pageDecrementButton = <li onClick={handlePrev}>&hellip;</li>
