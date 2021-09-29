@@ -54,13 +54,18 @@ useEffect(async()=>{
 },[singleMovie.id])
 
 //console.log("VIDEO KEY",videoKey)
-
+//back to previous page 
+/* const goBack=()=>{
+  window. history.go(-1)
+} */
     return (
       
       <div className="singleMovie">
 
           <div className="singleMovieWrapper">
               <div className="left">
+                  {/* back button */}
+                 {/*  <div className="backButton"onClick={goBack} >Back</div>*/}
                   {/* poster image */}
                  <img src={`http://image.tmdb.org/t/p/w500/${singleMovie.poster_path}`} alt={singleMovie.original_title} /> 
               </div>
