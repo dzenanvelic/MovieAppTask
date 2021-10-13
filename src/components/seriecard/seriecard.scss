@@ -2,12 +2,11 @@
   text-decoration: none;
 }
 
-.movieCard {
-  position: relative;
+.serieCard {
   width: 200px;
   height: 370px;
   transition: all 0.5s ease-in;
-
+  position: relative;
   border: 1px solid white;
   margin-bottom: 20px;
 
@@ -20,11 +19,12 @@
     color: white;
   }
   .ratingStar {
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
     display: flex;
     align-items: center;
-    position: absolute;
-    bottom: 3px;
-    left: 5px;
+
     .iconStar {
       font-size: 20px;
       color: goldenrod;
@@ -43,8 +43,9 @@
   }
 }
 @media (max-width: 776px) {
-  .movieCard {
-    width: 240px;
+  .serieCard {
+    width: 280px;
+    margin: 10px auto;
 
     h3 {
       font-size: 20px;

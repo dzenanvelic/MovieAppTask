@@ -3,15 +3,18 @@ import{Link}from 'react-router-dom'
 import{Search} from '@material-ui/icons'
 import './navigation.scss'
 import axios from 'axios'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 function Navigation() {
 
-   
-    
+   const dispatch=useDispatch()
+    const{search }= useSelector((state=>({...state})))
+    const{text}= search
 
 
    
-
+const handleChange=(e)=>{
+dispatch({type:"SEARCH_QUERY",payload:{text:e.target.value}})
+}
     return (
         <nav>
            
@@ -28,7 +31,10 @@ function Navigation() {
 </ul>
             </div>
            
-            
+            <div className="search">
+               
+                <input type="text" placeholder="search " value={text} onChange={handleChange}/>
+            </div>
         </nav>
     )
 }

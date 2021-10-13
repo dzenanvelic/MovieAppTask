@@ -1,0 +1,40 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .pageNumbers {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+
+    color: white;
+    li {
+      padding: 10px;
+      border: 1px solid white;
+      cursor: pointer;
+      &.active {
+        color: #222;
+        background-color: #fff;
+      }
+      button {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        &:hover {
+          background-color: #fff;
+          color: black;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
